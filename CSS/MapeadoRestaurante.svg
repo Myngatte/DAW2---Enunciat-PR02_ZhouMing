@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" width="100vw" height="100vh" preserveAspectRatio="xMidYMid meet">
+    
+    <g id="layout">
+        <!-- Superficies grandes (2) - Comedores -->
+        <g id="Comedores_(2)">
+            <g id="Comedor_1" transform="translate(1020, 60) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="480" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="480" y1="0" x2="480" y2="320" stroke="#333" stroke-width="2"/>
+                <line x1="480" y1="320" x2="0" y2="320" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="320" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Madera.png" x="1" y="1" width="480" height="320"/>
+            </g>
+            <g id="Comedor_2" transform="translate(700, 60) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="480" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="480" y1="0" x2="480" y2="320" stroke="#333" stroke-width="2"/>
+                <line x1="480" y1="320" x2="0" y2="320" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="320" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Madera.png" x="1" y="1" width="480" height="320"/>
+            </g>
+        </g>
+
+        <!-- Superficies medianas (3) - Terrazas -->
+        <g id="Terrazas_(3)">
+            <g id="Terraza_1" transform="translate(380, 210) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="330" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="330" y1="0" x2="330" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="330" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Cesped.png" x="1" y="1" width="328" height="148"/>
+            </g>
+            <g id="Terraza_2" transform="translate(1170, 210) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="330" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="330" y1="0" x2="330" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="330" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Cesped.png" x="1" y="1" width="328" height="148"/>
+            </g>
+            <g id="Terraza_3" transform="translate(380,540) rotate(0, 0, 0)">
+                <line x1="0" y1="0" x2="640" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="640" y1="0" x2="640" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="640" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Cesped_largo.png" x="1" y="1" width="638" height="148"/>
+            </g>
+        </g>
+
+        <!-- Superficies pequeñas (4) - Salas Privadas -->
+        <g id="Salas_privadas(4)">
+            <g id="Sala_privada_1" transform="translate(380, 60) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="150" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="0" x2="150" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Racholas.png" x="1" y="1" width="148" height="148"/>
+            </g>
+            <g id="Sala_privada_2" transform="translate(380, 540) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="150" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="0" x2="150" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Racholas.png" x="1" y="1" width="148" height="148"/>
+            </g>
+            <g id="Sala_privada_3" transform="translate(1170, 540) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="150" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="0" x2="150" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Racholas.png" x="1" y="1" width="148" height="148"/>
+            </g>
+            <g id="Sala_privada_4" transform="translate(1170, 60) rotate(90, 0, 0)">
+                <line x1="0" y1="0" x2="150" y2="0" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="0" x2="150" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="150" y1="150" x2="0" y2="150" stroke="#333" stroke-width="2"/>
+                <line x1="0" y1="150" x2="0" y2="0" stroke="#333" stroke-width="2"/>
+                <image href="./img/Racholas.png" x="1" y="1" width="148" height="148"/>
+            </g>
+        </g>
+        <g id="Puerta" transform="translate(915, 140)scale(0.7)rotate(270)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="100" x2="100" y2="150" stroke="black" stroke-width="2"/> <!-- Lado móvil de la puerta -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta2" transform="translate(450, 175)scale(0.7)rotate(180)">
+             <!-- Contorno de la puerta -->
+            <line x1="100" y1="150" x2="50" y2="150" stroke="black" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+            <!-- Arco de apertura -->
+            <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta3" transform="translate(265, 280)scale(0.7)rotate(-90)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="150" x2="50" y2="150" stroke="white" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta4" transform="translate(1100, 315)scale(0.7)rotate(180)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="100" x2="100" y2="150" stroke="white" stroke-width="2"/> <!-- Lado móvil de la puerta -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta5" transform="translate(345, 470)scale(0.7)rotate(90)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="150" x2="50" y2="150" stroke="white" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta6" transform="translate(1090, 435)scale(0.7)rotate(360)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="100" x2="100" y2="150" stroke="white" stroke-width="2"/> <!-- Lado móvil de la puerta -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta7" transform="translate(485, 610)scale(0.7)rotate(-270)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="100" x2="100" y2="150" stroke="white" stroke-width="2"/> <!-- Lado móvil de la puerta -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta8" transform="translate(951, 575)scale(0.7)rotate(360)">
+            <!-- Contorno de la puerta -->
+            <line x1="100" y1="150" x2="50" y2="150" stroke="white" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+            <!-- Arco de apertura -->
+            <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta9" transform="translate(485, 460)scale(0.7)rotate(-270)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="100" x2="100" y2="150" stroke="black" stroke-width="2"/> <!-- Lado móvil de la puerta -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta10" transform="translate(620, 435)scale(0.7)rotate(360)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="100" x2="100" y2="150" stroke="black" stroke-width="2"/> <!-- Lado móvil de la puerta -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta11" transform="translate(815, 470)scale(0.7)rotate(90)">
+            <!-- Contorno de la puerta -->
+           <line x1="100" y1="150" x2="50" y2="150" stroke="black" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+           <!-- Arco de apertura -->
+           <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="Puerta12" transform="translate(951, 425)scale(0.7)rotate(360)">
+            <!-- Contorno de la puerta -->
+            <line x1="100" y1="150" x2="50" y2="150" stroke="black" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+            <!-- Arco de apertura -->
+            <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+        </g>
+        <g id="PuertaDoble_1" transform="translate(0, -30)">
+            <g id="Puerta13" transform="translate(770, 420)scale(0.7)rotate(180)">
+                <!-- Contorno de la puerta -->
+               <line x1="100" y1="150" x2="50" y2="150" stroke="black" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+               <!-- Arco de apertura -->
+               <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+            </g>
+        </g>
+        <g id="PuertaDoble_2" transform="translate(0, 215)">
+            <g id="Puerta14" transform="translate(631, 35)scale(0.7)rotate(360)">
+                <!-- Contorno de la puerta -->
+                <line x1="100" y1="150" x2="50" y2="150" stroke="black" stroke-width="2"/> <!-- Lado de la puerta fijo -->
+                <!-- Arco de apertura -->
+                <path d="M 50 150 A 50 50 0 0 1 100 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4,4"/>
+            </g>
+        </g>
+    </g>
+</svg>

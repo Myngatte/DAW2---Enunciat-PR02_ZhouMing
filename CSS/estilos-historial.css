@@ -1,0 +1,91 @@
+/* Hoja de estilos del historial */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(220, 213, 194);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.historial{
+    overflow-y: auto;
+    max-height: 480px;
+}
+
+/* Ajusta el encabezado para que sea sticky */
+th {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: left;
+}
+
+tr:hover{
+    background-color: #e4e4e4;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+p {
+    font-style: italic;
+    color: #666;
+}
+
+.back {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}

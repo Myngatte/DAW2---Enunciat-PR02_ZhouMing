@@ -1,0 +1,295 @@
+/* Hoja de estilos para las salas */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(220, 213, 194);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Estilos del botón "Cerrar session" */
+.logout {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(86, 86, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+}
+
+.logout:hover {
+    background-color: rgb(29, 29, 252);
+    transform: scale(1.05);
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Contenedor superior (mapeado + mesas) */
+.contenedor-superior {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Mapeado con imagen de fondo */
+.mapeado {
+    height: 90vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Los inputs de las salas estarán dentro de este contenedor, que tiene z-index alto */
+.input_sala {
+    position: absolute;
+    padding: 10px;
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 3;
+    border: transparent;
+}
+
+.input_sala2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding-left: 12px;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.input_sala:hover {
+    background-color: rgba(0, 0, 0, 0.309);
+}
+
+/* Inputs de cada sala */
+.input_Comedor_1 {
+    left: 16%;
+    width: 34%;
+    height: 76%;
+}
+
+.input_Comedor_2 {
+    left: 50%;
+    width: 34%;
+    height: 76%;
+}
+
+.input_Terraza_1 {
+    top: 23.8%;
+    width: 16%;
+    height: 52.5%;
+}
+
+.input_Terraza_2 {
+    top: 23.8%;
+    left: 84%;
+    width: 16%;
+    height: 52.5%;
+}
+
+.input_Salon_VIP {
+    width: 16%;
+    height: 24%;
+}
+
+.input_Salon_VIP_2 {
+    left: 84%;
+    width: 16%;
+    height: 24%;
+}
+
+.input_Jardin {
+    top: 76%;
+    left: 16%;
+    width: 68%;
+    height: 24%;
+}
+
+.input_Naturaleza {
+    top: 76%;
+    height: 24%;
+    width: 16%;
+}
+
+.input_Salon_romantico {
+    top: 76%;
+    left: 84%;
+    height: 24%;
+    width: 16%;
+}
+
+.mesas_disponibles_Comedor_1 {
+    top: -4.5%;
+    left: 16%;
+    width: 32.5%;
+    height: 75.8%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Comedor_2 {
+    top: -4.5%;
+    left: 50%;
+    width: 32.5%;
+    height: 75.5%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Terraza_1 {
+    top: 19.2%;
+    width: 14.5%;
+    height: 52%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Terraza_2 {
+    top: 19.3%;
+    left: 84%;
+    width: 14.5%;
+    height: 52%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Salon_VIP {
+    top:-3.8%;
+    width: 14.8%;
+    height: 23.5%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Salon_VIP_2 {
+    top: -4.5%;
+    left: 84%;
+    width: 14.5%;
+    height: 23.5%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Jardin {
+    top: 71.5%;
+    left: 16%;
+    width: 66.5%;
+    height: 23.5%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Naturaleza {
+    top: 71.6%;
+    height: 23.2%;
+    width: 14.5%;
+    color: white;
+    font-size: 30px;
+}
+
+.mesas_disponibles_Salon_romantico {
+    top: 71.5%;
+    left: 84%;
+    height: 23.5%;
+    width: 14.5%;
+    color: white;
+    font-size: 30px;
+}
+
+/* Footer */
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: -5.5%;
+}
+
+.footer {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    position: relative;
+    z-index: 10;
+}
+
+/* Asegura que el enlace se muestre correctamente */
+.footer > a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: center;
+    position: relative;
+    z-index: 20;
+}
+
+/* Asegura que el botón esté por encima de la imagen de fondo */
+.logout {
+    position: relative;
+    width: 140px;
+    z-index: 30;
+    margin-left: 6px;
+    margin-top: 15px;
+}
+
+/* Estilos del botón "Historial" */
+.back {
+    padding: 10px 20px;
+    margin-left: 6px;
+    margin-top: 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    width: 134vh;
+    height: 90vh;
+    z-index: 40;
+    position: absolute;
+}
+
+#fomruarioDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}

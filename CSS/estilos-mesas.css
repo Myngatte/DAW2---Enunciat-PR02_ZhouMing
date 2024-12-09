@@ -1,0 +1,454 @@
+/* Hoja de estilos para las mesas */
+
+body{
+    background-color: rgb(220, 213, 194);
+}
+
+#btn_1{
+    position: absolute;
+    top: 22.5%;
+    left: 45.4%;
+    width: 8.8%;
+    height: 8.8%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 30% 30% 30% 30%;
+}
+
+#btn_2{
+    position: absolute;
+    top: 46.5%;
+    left: 50.35%;
+    width: 3%;
+    height: 7%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 50%;
+}
+
+#btn_3{
+    position: absolute;
+    top: 46.5%;
+    left: 43.2%;
+    width: 3%;
+    height: 7%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 50%;
+}
+
+#btn_4{
+    position: absolute;
+    top: 67.5%;
+    left: 45.5%;
+    width: 8.8%;
+    height: 8.8%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 30% 30% 30% 30%;
+}
+
+#btn_5{
+    position: absolute;
+    top: 22.2%;
+    left: 45%;
+    width: 8.8%;
+    height: 8.8%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 30% 30% 30% 30%;
+}
+
+#btn_6{
+    position: absolute;
+    top: 44.9%;
+    left: 46%;
+    width: 3%;
+    height: 7%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 50%;
+}
+
+#btn_7{
+    position: absolute;
+    top: 45%;
+    left: 53.2%;
+    width: 3%;
+    height: 7%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 50%;
+}
+
+#btn_8{
+    position: absolute;
+    top: 67.1%;
+    left: 45.1%;
+    width: 8.8%;
+    height: 8.8%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 30% 30% 30% 30%;
+}
+
+#btn_9{
+    position: absolute;
+    top: 22%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_10{
+    position: absolute;
+    top: 43.7%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_11{
+    position: absolute;
+    top: 63.8%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_12{
+    position: absolute;
+    top: 22%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_13{
+    position: absolute;
+    top: 43.7%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_14{
+    position: absolute;
+    top: 63.8%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_15{
+    position: absolute;
+    top: 22%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_16{
+    position: absolute;
+    top: 43.7%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_17{
+    position: absolute;
+    top: 63.8%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_18{
+    position: absolute;
+    top: 42.8%;
+    left: 45.4%;
+    width: 7.3%;
+    height: 12.5%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_19{
+    position: absolute;
+    top: 23.7%;
+    left: 47.5%;
+    width: 4.5%;
+    height: 10%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_20{
+    position: absolute;
+    top: 49.3%;
+    left: 47.5%;
+    width: 4.5%;
+    height: 10%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_21{
+    position: absolute;
+    top: 71.5%;
+    left: 48%;
+    width: 3.6%;
+    height: 6.6%;
+    z-index: 1;
+    color: transparent;
+}
+
+#btn_22{
+    position: absolute;
+    top: 16%;
+    left: 47.8%;
+    width: 5.8%;
+    height: 32%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 30% 30% 30% 30%;
+}
+
+#btn_23{
+    position: absolute;
+    top: 59.9%;
+    left: 46.4%;
+    width: 4.4%;
+    height: 9.8%;
+    z-index: 1;
+    color: transparent ;
+}
+
+#btn_24{
+    position: absolute;
+    top: 38.8%;
+    left: 19.3%;
+    width: 5.3%;
+    height: 12%;
+    z-index: 1;
+    color: transparent;
+}
+
+#btn_25{
+    position: absolute;
+    top: 44%;
+    left: 32.4%;
+    width: 3.5%;
+    height: 10.5%;
+    z-index: 1;
+    color: transparent;
+}
+
+#btn_26{
+    position: absolute;
+    top: 41.5%;
+    left: 40.1%;
+    width: 17.5%;
+    height: 16.3%;
+    z-index: 1;
+    color: transparent;
+    border-radius: 30% 30% 30% 30%;
+}
+
+#btn_27{
+    position: absolute;
+    top: 44.2%;
+    left: 62.5%;
+    width: 3.5%;
+    height: 10.5%;
+    z-index: 1;
+    color: transparent;
+}
+
+#btn_28{
+    position: absolute;
+    top: 38.8%;
+    left: 74.3%;
+    width: 5.3%;
+    height: 12%;
+    z-index: 1;
+    color: transparent;
+}
+
+.contenedor {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor>h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Tipo de salas */
+.terrazafoto {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    width: 15%; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(186, 147, 147, 0.2);
+}
+
+.jardinfoto {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    width: 80%; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reservaofoto {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    width: 30%; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comedorfoto {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    width: 20%; 
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de fondo centrada */
+.terrazafoto img,
+.jardinfoto img,
+.comedorfoto img,
+.reservaofoto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilos para los botones de las mesas */
+form button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 150px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Clases para los botones de mesas según el estado */
+.btn-verde {
+    background-color: #28a746dc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-verde:hover {
+    transform: scale(1.05);
+}
+
+.btn-rojo {
+    background-color: rgba(255, 0, 0, 0.618);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-rojo:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el título */
+h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* Contenedor para centrar el botón debajo de la imagen */
+.volver-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: absolute;
+    
+}
+
+/* Estilos del botón "Volver a salas" */
+.back {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
