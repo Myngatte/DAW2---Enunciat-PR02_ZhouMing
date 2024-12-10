@@ -24,7 +24,7 @@ try {
     // Verificar si se encontró el usuario
     if ($row) {
         // Comparar la contraseña ingresada con el hash almacenado
-        if (!password_verify($pwd, $row["user_pwd"])) {
+        if ($pwd !== $row["user_pwd"]) {
             header("Location: ../index.php?error=datosMal");
             exit();
         }

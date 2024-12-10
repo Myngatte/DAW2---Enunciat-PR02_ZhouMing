@@ -1,32 +1,144 @@
-/* Hoja de estilos asignar-mesas */
-
 html, body {
     height: 100%;
+    margin: 0;  /* Elimina el margen predeterminado */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    background-color: rgb(220, 213, 194);
+    background-image: url(../CSS/img/Fondo/fondo2.webp);
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    color: #fff;
 }
+
 
 /* Estilo del contenedor */
 .container {
     max-width: 600px;
     margin-top: 50px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 25px rgba(0, 255, 255, 0.3); /* Efecto glow neon */
+    text-align: center;
 }
 
+/* Botón rojo neon */
 .btn-rojo {
     background-color: #dc3545;
     color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
+
+.btn-rojo:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-rojo:hover {
+    background-color: #f44336;
+}
+
+.btn-rojo:hover:before {
+    width: 0;
+    height: 0;
+}
+
+/* Botón verde neon */
 .btn-verde {
     background-color: #28a745;
     color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
+.btn-verde:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(0, 255, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn-verde:hover {
+    background-color: #4CAF50;
+}
+.btn-verde:hover:before {
+    width: 0;
+    height: 0;
+}
+
+/* Botón de volver con estilo retro */
 .back {
     margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #6f42c1;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(111, 66, 193, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.back:hover {
+    background-color: #5a32a3;
+    box-shadow: 0 0 20px rgba(111, 66, 193, 0.8);
+}
+
+/* Efecto de texto glow */
+h2, p {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 1), 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+/* Formulario de entrada */
+input[type="text"] {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Efectos de glow para botones */
+button {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
 }

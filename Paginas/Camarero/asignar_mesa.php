@@ -7,12 +7,12 @@
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="../CSS/estilos-asignar.css">
+    <link rel="stylesheet" href="../../CSS/estilos-asignar.css">
 </head>
 <body>
     <div class="container text-center">
         <?php
-            require_once "../Procesos/conection.php";
+            require_once "../../Procesos/conection.php"; // Suponiendo que la conexión ya está configurada
             session_start();
 
             // Comprobación de sesión activa
@@ -21,24 +21,22 @@
                 exit();
             }
 
-            $id_user = $_SESSION["camareroID"]; // ID del camarero actual
+            $id_user = $_SESSION["camareroID"]; // ID del usuario actual
 
             if (isset($_POST['mesa'])) {
                 $id_mesa = $_POST['mesa'];
 
                 // Verificar si se ha solicitado desasignar la mesa
                 if (isset($_POST['desasignar'])) {
-                    $stmt_update = $conn->prepare("UPDATE tbl_historial SET fecha_NA = NOW() WHERE id_mesa = ? AND fecha_NA IS NULL");
-                    $stmt_update->bind_param("i", $id_mesa);
+                    $stmt_update = $conn->prepare("UPDATE ocupacion SET fecha_F = NOW() WHERE id_mesa = :id_mesa AND fecha_F IS NULL");
+                    $stmt_update->bindParam(':id_mesa', $id_mesa, PDO::PARAM_INT);
                     $stmt_update->execute();
 
-                    if ($stmt_update->affected_rows > 0) {
+                    if ($stmt_update->rowCount() > 0) {
                         echo "<p class='text-success'>Mesa $id_mesa desasignada exitosamente.</p>";
                     } else {
                         echo "<p class='text-danger'>Error al desasignar la mesa. Intenta de nuevo.</p>";
                     }
-
-                    $stmt_update->close();
                 }
 
                 // Verificar si se ha solicitado asignar la mesa y validar el campo 'assigned_to'
@@ -47,43 +45,43 @@
 
                     // Validación de al menos 3 caracteres y solo letras
                     if (preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,}$/", $assigned_to)) {
-                        $stmt_insert = $conn->prepare("INSERT INTO tbl_historial (fecha_A, assigned_by, assigned_to, id_mesa) VALUES (NOW(), ?, ?, ?)");
-                        $stmt_insert->bind_param("isi", $id_user, $assigned_to, $id_mesa);
+                        $stmt_insert = $conn->prepare("INSERT INTO ocupacion (fecha_C, assigned_by, assigned_to, id_mesa) VALUES (NOW(), :assigned_by, :assigned_to, :id_mesa)");
+                        $stmt_insert->bindParam(':assigned_by', $id_user, PDO::PARAM_INT);
+                        $stmt_insert->bindParam(':assigned_to', $assigned_to, PDO::PARAM_STR);
+                        $stmt_insert->bindParam(':id_mesa', $id_mesa, PDO::PARAM_INT);
                         $stmt_insert->execute();
 
-                        if ($stmt_insert->affected_rows > 0) {
+                        if ($stmt_insert->rowCount() > 0) {
                             echo "<p class='text-success'>Mesa $id_mesa asignada exitosamente a $assigned_to.</p>";
                         } else {
                             echo "<p class='text-danger'>Error al asignar la mesa. Intenta de nuevo.</p>";
                         }
-                        $stmt_insert->close();
                     } else {
-                        echo "<p class='text-danger'>No me vale</p>";
+                        echo "<p class='text-danger'>El nombre asignado no es válido.</p>";
                     }
                 } elseif (isset($_POST['assigned_to']) && $_POST['assigned_to'] === '') {
-                        echo "<p class='text-danger'>No pusiste nada</p>";
+                    echo "<p class='text-danger'>No pusiste nada en el campo de asignación.</p>";
                 }
 
                 // Consulta para verificar si la mesa está asignada actualmente
                 $stmt = $conn->prepare("
-                    SELECT h.id_historial, h.fecha_A, h.assigned_by, h.assigned_to, c.name_camarero, c.surname_camarero
-                    FROM tbl_historial h
-                    JOIN tbl_camarero c ON h.assigned_by = c.id_camarero
-                    WHERE h.id_mesa = ? AND h.fecha_NA IS NULL
-                    ORDER BY h.fecha_A DESC
+                    SELECT o.id_ocupacion, o.fecha_C, o.assigned_by, o.assigned_to, u.name AS name_user, u.surname AS surname_user
+                    FROM ocupacion o
+                    JOIN tbl_user u ON o.assigned_by = u.id_user
+                    WHERE o.id_mesa = :id_mesa AND o.fecha_F IS NULL
+                    ORDER BY o.fecha_C DESC
                     LIMIT 1
                 ");
-                $stmt->bind_param("i", $id_mesa);
+                $stmt->bindParam(':id_mesa', $id_mesa, PDO::PARAM_INT);
                 $stmt->execute();
-                $resultado = $stmt->get_result();
+                $asignacion = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 // Mostrar información de la asignación si existe
-                if ($resultado->num_rows > 0) {
-                    $asignacion = $resultado->fetch_assoc();
+                if ($asignacion) {
                     echo "<a href='mesas.php'><button class='btn btn-secondary back'>Volver a mesas</button></a>";
                     echo "<h2>Detalles de Asignación de la Mesa $id_mesa</h2>";
-                    echo "<p><strong>Fecha de Asignación:</strong> " . htmlspecialchars($asignacion['fecha_A']) . "</p>";
-                    echo "<p><strong>Asignada por:</strong> " . htmlspecialchars($asignacion['name_camarero']) . " " . htmlspecialchars($asignacion['surname_camarero']) . "</p>";
+                    echo "<p><strong>Fecha de Asignación:</strong> " . htmlspecialchars($asignacion['fecha_C']) . "</p>";
+                    echo "<p><strong>Asignada por:</strong> " . htmlspecialchars($asignacion['name_user']) . " " . htmlspecialchars($asignacion['surname_user']) . "</p>";
                     echo "<p><strong>Asignada a:</strong> " . htmlspecialchars($asignacion['assigned_to']) . "</p>";
 
                     // Botón de desasignar con IDs correctos
@@ -103,13 +101,9 @@
                     echo "<button type='submit' id='btn-asignar' class='btn btn-verde'>Asignar</button>";
                     echo "</form>";
                 }
-
-                $stmt->close();
             } else {
                 echo "<p>No se ha seleccionado ninguna mesa.</p>";
             }
-
-            $conn->close();
         ?>
     </div>
     <!-- Bootstrap -->

@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <div class="imgIndex">
-            <img src="./CSS/img/logo/logo.png" alt="Imagen descriptiva">
+            <img src="./CSS/img/logo/logo-nobg.png" alt="Imagen descriptiva">
         </div>
 
         <form id="login" class="login" method="POST" action="./Procesos/procesoLogin.php">

@@ -1,454 +1,133 @@
-/* Hoja de estilos para las mesas */
-
-body{
-    background-color: rgb(220, 213, 194);
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#btn_1{
-    position: absolute;
-    top: 22.5%;
-    left: 45.4%;
-    width: 8.8%;
-    height: 8.8%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 30% 30% 30% 30%;
+/* Fondo de la página */
+body {
+    background-image: url(../CSS/img/Fondo/fondo2.webp);
+    color: #fff; /* Texto blanco */
+    font-family: 'Courier New', Courier, monospace; /* Fuente tipo retro */
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-#btn_2{
-    position: absolute;
-    top: 46.5%;
-    left: 50.35%;
-    width: 3%;
-    height: 7%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 50%;
-}
-
-#btn_3{
-    position: absolute;
-    top: 46.5%;
-    left: 43.2%;
-    width: 3%;
-    height: 7%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 50%;
-}
-
-#btn_4{
-    position: absolute;
-    top: 67.5%;
-    left: 45.5%;
-    width: 8.8%;
-    height: 8.8%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 30% 30% 30% 30%;
-}
-
-#btn_5{
-    position: absolute;
-    top: 22.2%;
-    left: 45%;
-    width: 8.8%;
-    height: 8.8%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 30% 30% 30% 30%;
-}
-
-#btn_6{
-    position: absolute;
-    top: 44.9%;
-    left: 46%;
-    width: 3%;
-    height: 7%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 50%;
-}
-
-#btn_7{
-    position: absolute;
-    top: 45%;
-    left: 53.2%;
-    width: 3%;
-    height: 7%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 50%;
-}
-
-#btn_8{
-    position: absolute;
-    top: 67.1%;
-    left: 45.1%;
-    width: 8.8%;
-    height: 8.8%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 30% 30% 30% 30%;
-}
-
-#btn_9{
-    position: absolute;
-    top: 22%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_10{
-    position: absolute;
-    top: 43.7%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_11{
-    position: absolute;
-    top: 63.8%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_12{
-    position: absolute;
-    top: 22%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_13{
-    position: absolute;
-    top: 43.7%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_14{
-    position: absolute;
-    top: 63.8%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_15{
-    position: absolute;
-    top: 22%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_16{
-    position: absolute;
-    top: 43.7%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_17{
-    position: absolute;
-    top: 63.8%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_18{
-    position: absolute;
-    top: 42.8%;
-    left: 45.4%;
-    width: 7.3%;
-    height: 12.5%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_19{
-    position: absolute;
-    top: 23.7%;
-    left: 47.5%;
-    width: 4.5%;
-    height: 10%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_20{
-    position: absolute;
-    top: 49.3%;
-    left: 47.5%;
-    width: 4.5%;
-    height: 10%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_21{
-    position: absolute;
-    top: 71.5%;
-    left: 48%;
-    width: 3.6%;
-    height: 6.6%;
-    z-index: 1;
-    color: transparent;
-}
-
-#btn_22{
-    position: absolute;
-    top: 16%;
-    left: 47.8%;
-    width: 5.8%;
-    height: 32%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 30% 30% 30% 30%;
-}
-
-#btn_23{
-    position: absolute;
-    top: 59.9%;
-    left: 46.4%;
-    width: 4.4%;
-    height: 9.8%;
-    z-index: 1;
-    color: transparent ;
-}
-
-#btn_24{
-    position: absolute;
-    top: 38.8%;
-    left: 19.3%;
-    width: 5.3%;
-    height: 12%;
-    z-index: 1;
-    color: transparent;
-}
-
-#btn_25{
-    position: absolute;
-    top: 44%;
-    left: 32.4%;
-    width: 3.5%;
-    height: 10.5%;
-    z-index: 1;
-    color: transparent;
-}
-
-#btn_26{
-    position: absolute;
-    top: 41.5%;
-    left: 40.1%;
-    width: 17.5%;
-    height: 16.3%;
-    z-index: 1;
-    color: transparent;
-    border-radius: 30% 30% 30% 30%;
-}
-
-#btn_27{
-    position: absolute;
-    top: 44.2%;
-    left: 62.5%;
-    width: 3.5%;
-    height: 10.5%;
-    z-index: 1;
-    color: transparent;
-}
-
-#btn_28{
-    position: absolute;
-    top: 38.8%;
-    left: 74.3%;
-    width: 5.3%;
-    height: 12%;
-    z-index: 1;
-    color: transparent;
-}
-
+/* Contenedor principal */
 .contenedor {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contenedor>h2{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
 }
 
-form {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Botones de navegación */
+button {
+    background-color: transparent;
+    color: #39ff14; /* Neón verde */
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #39ff14;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-/* Tipo de salas */
-.terrazafoto {
-    display: flex;
-    justify-content: center;
+button:hover {
+    background-color: #39ff14;
+    color: #1c1c1c;
+    box-shadow: 0 0 15px #39ff14, 0 0 25px #39ff14;
+}
+
+/* Estilo del encabezado */
+h2 {
+    color: #39ff14;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    margin-bottom: 20px;
+}
+
+/* Fondo de las imágenes de las salas */
+.terrazafoto, .jardinfoto, .comedorfoto, .reservaofoto {
     position: relative;
-    margin: 0 auto;
-    width: 15%; 
-    height: auto;
+    display: inline-block;
+    margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(186, 147, 147, 0.2);
+    overflow: hidden;
 }
 
-.jardinfoto {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: 0 auto;
-    width: 80%; 
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.reservaofoto {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: 0 auto;
-    width: 30%; 
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.comedorfoto {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: 0 auto;
-    width: 20%; 
-    height: 70%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Imagen de fondo centrada */
 .terrazafoto img,
 .jardinfoto img,
 .comedorfoto img,
 .reservaofoto img {
     width: 100%;
-    height: auto;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Estilos para los botones de las mesas */
-form button {
-    padding: 10px 20px;
+.terrazafoto:hover img,
+.jardinfoto:hover img,
+.comedorfoto:hover img,
+.reservaofoto:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #39ff14, 0 0 50px #39ff14;
+}
+
+/* Botones de las mesas */
+button[type="submit"] {
+    background-color: #222; /* Fondo oscuro */
+    color: #ff007f; /* Neón rosa */
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border: 2px solid #ff007f; /* Bordes con neón rosa */
+    border-radius: 5px;
     margin: 10px;
-    border: none;
-    border-radius: 5px;
-    height: 150px;
-    font-size: 16px;
-    color: white;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-/* Clases para los botones de mesas según el estado */
-.btn-verde {
-    background-color: #28a746dc;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
+/* Botones de mesas con color rojo neón */
+button[type="submit"].btn-rojo {
+    background-color: #ff0033; /* Rojo neón */
+    color: #fff;
+    border-color: #ff0033; /* Rojo neón */
 }
 
-.btn-verde:hover {
-    transform: scale(1.05);
+/* Botones de mesas con color verde neón */
+button[type="submit"].btn-verde {
+    background-color: #39ff14; /* Verde neón */
+    color: #1c1c1c;
+    border-color: #39ff14; /* Verde neón */
 }
 
-.btn-rojo {
-    background-color: rgba(255, 0, 0, 0.618);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
+/* Efecto al hacer hover en los botones */
+button[type="submit"]:hover {
+    background-color: #ff007f; /* Fondo rosa neón */
+    color: #1c1c1c;
+    box-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f;
 }
 
-.btn-rojo:hover {
-    transform: scale(1.05);
+/* Botones de submit al hacer clic */
+button[type="submit"]:active {
+    transform: scale(0.95); /* Reduce el tamaño ligeramente al hacer clic */
+    box-shadow: 0 0 20px #ff007f, 0 0 30px #ff007f; /* Efecto más fuerte al hacer clic */
 }
 
-/* Estilo para el título */
-h2 {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-}
-/* Contenedor para centrar el botón debajo de la imagen */
-.volver-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    position: absolute;
-    
+h2, button, .contenedor {
+    animation: neonText 1.5s ease-in-out infinite alternate;
 }
 
-/* Estilos del botón "Volver a salas" */
-.back {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #6c757d;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+/* Efectos adicionales */
+button:active {
+    transform: scale(0.95);
 }
 
-.back:hover {
-    background-color: #5a6268;
-    transform: scale(1.05);
+/* Estilos generales de texto */
+h1, h2, h3, p {
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #39ff14;
 }
