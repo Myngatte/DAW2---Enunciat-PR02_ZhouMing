@@ -8,7 +8,7 @@
 
 ¡Bienvenidos a **"La Comida del Futuro"**! Este es el lugar perfecto donde la gastronomía se encuentra con la innovación. En nuestro restaurante, cada plato es una experiencia única, pero este proyecto no solo busca ofrecer una comida exquisita, sino también una solución digital integral para administrar y mejorar la experiencia del cliente.
 
-Este repositorio contiene el código y la documentación de la aplicación web que gestiona las reservas, el diseño y administración de salas, así como la interacción con los usuarios. Ha sido mejorado y renovado sobre la base de un proyecto anterior de Ming Zhou, con nuevas funcionalidades y una interfaz rediseñada para ofrecer una mejor experiencia de usuario.
+Este repositorio contiene el código y la documentación de la aplicación web que gestiona las reservas, el diseño y administración de salas, así como la interacción con los usuarios. Ha sido mejorado y renovado sobre la base de un proyecto anterior del grupo Doc Brown, con nuevas funcionalidades y una interfaz rediseñada para ofrecer una mejor experiencia de usuario.
 
 ---
 
