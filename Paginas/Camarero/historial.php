@@ -3,7 +3,7 @@
     session_start();
 
     // Verificar si el usuario está logueado
-    if (!isset($_SESSION["camareroID"])) {
+    if (!isset($_SESSION["camareroID"]) && !isset($_SESSION["adminID"])) {
         header('Location: ../index.php?error=nosesion');
         exit();
     }
@@ -12,7 +12,7 @@
     $SalaSeleccionada = isset($_POST['room']) ? $_POST['room'] : null;
     $selectedTable = isset($_POST['table']) ? $_POST['table'] : null;
     $filterDate = isset($_POST['filter_date']) ? $_POST['filter_date'] : null;
-    $filterCamarero = isset($_POST['filter_camarero']) ? $_POST['filter_camarero'] : null;
+    $filterUser = isset($_POST['filter_user']) ? $_POST['filter_user'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@
     <?php if ($SalaSeleccionada): ?>
         <!-- Formulario de selección de mesa (solo si se selecciona una sala) -->
         <form method="post" action="historial.php">
-            <label for="table" >Seleccione una Mesa:</label>
+            <label for="table">Seleccione una Mesa:</label>
             <select name="table" id="table" onchange="this.form.submit()">
                 <option value="">Todo</option>
                 <?php
@@ -86,18 +86,18 @@
             <label for="filter_date">Filtrar por Fecha:</label>
             <input type="date" name="filter_date" id="filter_date" value="<?php echo $filterDate; ?>" onchange="this.form.submit()">
 
-            <label for="filter_camarero">Filtrar por Camarero:</label>
-            <select name="filter_camarero" id="filter_camarero" onchange="this.form.submit()">
+            <label for="filter_user">Filtrar por Usuario:</label>
+            <select name="filter_user" id="filter_user" onchange="this.form.submit()">
                 <option value="">Todo</option>
                 <?php
-                // Consulta para obtener todos los camareros (usuarios con rol_user = 2)
-                $stmt_camareros = $conn->prepare("SELECT id_user, name, surname FROM tbl_user WHERE rol_user = 2");
-                $stmt_camareros->execute();
-                $camareros = $stmt_camareros->fetchAll(PDO::FETCH_ASSOC);
+                // Consulta para obtener todos los usuarios (camareros y administradores)
+                $stmt_users = $conn->prepare("SELECT id_user, name, surname FROM tbl_user WHERE rol_user IN (2, 5)");
+                $stmt_users->execute();
+                $users = $stmt_users->fetchAll(PDO::FETCH_ASSOC);
 
-                foreach ($camareros as $row) {
-                    $selectedCamarero = ($filterCamarero == $row['id_user']) ? 'selected' : '';
-                    echo "<option value='" . $row['id_user'] . "' $selectedCamarero>" . $row['name'] . " " . $row['surname'] . "</option>";
+                foreach ($users as $row) {
+                    $selectedUser = ($filterUser == $row['id_user']) ? 'selected' : '';
+                    echo "<option value='" . $row['id_user'] . "' $selectedUser>" . $row['name'] . " " . $row['surname'] . "</option>";
                 }
                 ?>
             </select>
@@ -110,11 +110,11 @@
     <?php
         // Consulta SQL base para mostrar el historial completo si no se selecciona mesa ni sala
         $sql = "
-            SELECT o.fecha_C, o.fecha_F, u.name, u.surname, o.assigned_to, m.id_mesa, m.n_asientos, s.name_sala
+            SELECT o.fecha_C, o.fecha_F, u.name AS name_user, u.surname AS surname_user, o.assigned_to, m.id_mesa, m.n_asientos, s.name_sala
             FROM ocupacion o
-            JOIN tbl_user u ON o.assigned_by = u.id_user AND u.rol_user = 2
-            JOIN tbl_mesas m ON o.id_mesa = m.id_mesa
-            JOIN tbl_salas s ON m.id_sala = s.id_salas
+            INNER JOIN tbl_user u ON o.assigned_by = u.id_user
+            INNER JOIN tbl_mesas m ON o.id_mesa = m.id_mesa
+            INNER JOIN tbl_salas s ON m.id_sala = s.id_salas
         ";
 
         // Variables para los parámetros de la consulta
@@ -128,10 +128,10 @@
             $tipos .= "s";
         }
 
-        // Si hay filtro de camarero
-        if ($filterCamarero) {
+        // Si hay filtro de usuario
+        if ($filterUser) {
             $sql .= " AND o.assigned_by = ?";
-            $parametros[] = $filterCamarero;
+            $parametros[] = $filterUser;
             $tipos .= "i";
         }
 
@@ -149,19 +149,17 @@
             $tipos .= "i";
         }
 
-        // Si se tienen parámetros, se vinculan
-        if (!empty($tipos)) {
-            // Preparar y ejecutar la consulta
-            $stmt_history = $conn->prepare($sql);
-        
-            // Vincular los parámetros dinámicamente
+        // Preparar la consulta
+        $stmt_history = $conn->prepare($sql);
+
+        // Ejecutar la consulta con los parámetros vinculados
+        if (!empty($parametros)) {
             $stmt_history->execute($parametros);
         } else {
-            // Si no hay parámetros, simplemente ejecutamos la consulta sin bind_param
-            $stmt_history = $conn->prepare($sql);
             $stmt_history->execute();
         }
 
+        // Obtener los resultados
         $result_history = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
 
         if (count($result_history) > 0) {
@@ -170,7 +168,7 @@
                         <tr class'attr_tr'>
                             <th>Sala</th>
                             <th>Mesa</th>
-                            <th>Camarero</th>
+                            <th>Usuario</th>
                             <th>Fecha ocupación</th>
                             <th>Cliente asignado</th>
                             <th>Fecha desocupación</th>
@@ -179,7 +177,7 @@
                     echo "<tr>
                             <td>" . $row['name_sala'] . "</td>
                             <td>Mesa " . $row['id_mesa'] . " (" . $row['n_asientos'] . " asientos)</td>
-                            <td>" . $row['name'] . " " . $row['surname'] . "</td>
+                            <td>" . $row['name_user'] . " " . $row['surname_user'] . "</td>
                             <td>" . $row['fecha_C'] . "</td>
                             <td>" . $row['assigned_to'] . "</td>
                             <td>" . ($row['fecha_F'] ? $row['fecha_F'] : "N/A") . "</td>
@@ -191,9 +189,11 @@
             echo "<p>No hay historial disponible.</p>";
         }
 
+        $stmt_history = null;
     ?>
 </body>
 </html>
+
 <?php
     $conn = null;
 ?>

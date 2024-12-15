@@ -16,14 +16,14 @@
 
             // Comprobación de sesión activa
             if (!isset($_SESSION["camareroID"])) {
-                header('Location: ../index.php');
+                header('Location: ../../index.php');
                 exit();
             } else {
                 $id_user = $_SESSION["camareroID"];
                 // sesion de sala
-                    if (isset($_POST['sala'])){
+                if (isset($_POST['sala'])){
                     $_SESSION['sala'] = $_POST['sala'];
-                    }
+                }
             }
 
             // Verificar si se ha enviado el nombre de la sala
@@ -34,14 +34,16 @@
                 $nombre_sala = htmlspecialchars($nombre_sala);
             
                 // Consultar ID de la sala basada en el nombre
-                $stmt = $conn->prepare("SELECT id_salas FROM tbl_salas WHERE name_sala = :nombre_sala");
+                $stmt = $conn->prepare("SELECT id_salas, foto_sala FROM tbl_salas WHERE name_sala = :nombre_sala");
                 $stmt->bindParam(":nombre_sala", $nombre_sala, PDO::PARAM_STR);
                 $stmt->execute();
                 
-                // Obtener el ID de la sala
+                // Obtener el ID de la sala y la foto
                 $id_sala = null;
+                $foto_sala = null;
                 if ($fila = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     $id_sala = $fila['id_salas'];
+                    $foto_sala = $fila['foto_sala'];
                 
                     // Consultar las mesas en esa sala
                     $stmt_mesas = $conn->prepare("
@@ -59,61 +61,28 @@
                 
                     // Mostrar mesas como botones
                     echo "<h2>Mesas en: $nombre_sala</h2>";
-                    echo "<form action='./asignar_mesa.php' method='POST'>";
-
-                    // Mostrar imagen según el nombre de la sala
-                    switch ($nombre_sala) {
-                        case 'Terraza_1':
-                            echo "<div class='terrazafoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/Terraza1.png" alt="" id="terrazafoto">';
-                            echo "</div>";
-                            break;
-                        case 'Terraza_2':
-                            echo "<div class='terrazafoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/Terraza2.png" alt="" id="terrazafoto">';
-                            echo "</div>";
-                            break;
-                        case 'Jardin':
-                            echo "<div class='jardinfoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/jardin.png" alt="" id="jardinfoto">';
-                            echo "</div>";
-                            break;
-                        case 'Comedor_1':
-                            echo "<div class='comedorfoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/comedor1.png" alt="" id="comedorfoto">';
-                            echo "</div>";
-                            break;
-                        case 'Comedor_2':
-                            echo "<div class='comedorfoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/comedor2.png" alt="" id="comedorfoto">';
-                            echo "</div>";
-                            break;
-                        case 'Salon_VIP':
-                            echo "<div class='reservaofoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/salon_vip.png" alt="" id="reservaofoto">';
-                            echo "</div>";
-                            break;
-                        case 'Salon_VIP_2':
-                            echo "<div class='reservaofoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/salon_vip_2.png" alt="" id="reservaofoto">';
-                            echo "</div>";
-                            break;
-                        case 'Salon_romantico':
-                            echo "<div class='reservaofoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/romantica.png" alt="" id="reservaofoto">';
-                            echo "</div>";
-                            break;
-                        case 'Naturaleza':
-                            echo "<div class='reservaofoto'>";
-                            echo '<img src="../CSS/img/salas + mesas/naturaleza.png" alt="" id="reservaofoto">';
-                            echo "</div>";
-                            break;
-                        default:
-                            echo "<p>Sala no encontrada.</p>";
-                            break;
+                    echo '<h3 class="titulo-formulario">Subir una nueva foto para la sala</h3>';
+                    echo '<form action="../../Procesos/upload_photo.php" method="POST" enctype="multipart/form-data" class="formulario-subir-imagen">';
+                    echo '    <label for="sala_image" class="label-imagen">Seleccionar imagen para la sala:</label>';
+                    echo '    <input type="file" name="sala_image" id="sala_image" accept="image/*" class="input-imagen">';
+                    echo '    <input type="hidden" name="sala" value="' . $nombre_sala . '">';
+                    echo '    <button type="submit" class="btn-subir-imagen">Subir Foto</button>';
+                    echo '</form>';
+                    // Mostrar la imagen de la sala
+                    if ($foto_sala) {
+                        echo "<div class='foto-sala'>";
+                        echo "<img src='../../CSS/img/salas/$foto_sala' alt='Foto de la sala $nombre_sala' id='foto_sala'>";
+                        echo "</div>";
+                    } else {
+                        // Imagen predeterminada si no se ha subido una
+                        echo "<div class='foto-sala'>";
+                        echo "<img src='../../CSS/img/salas/default.png' alt='Foto de la sala $nombre_sala' id='foto_sala'>";
+                        echo "</div>";
                     }
 
+
                     // Mostrar las mesas
+                    echo "<form action='./asignar_mesa.php' method='POST'>";
                     if ($stmt_mesas->rowCount() > 0) {
                         while ($mesa = $stmt_mesas->fetch(PDO::FETCH_ASSOC)) {
                             $id_mesa = htmlspecialchars($mesa['id_mesa']);
@@ -131,9 +100,6 @@
                     }
 
                     echo "</form>"; // Cerrar formulario
-                
-                    // Cerrar declaración de mesas
-                    $stmt_mesas->closeCursor();
                 } else {
                     echo "<p>No se encontró la sala especificada.</p>";
                 }

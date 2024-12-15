@@ -1,15 +1,19 @@
-html, body {
-    height: 100%;
-    margin: 0;  /* Elimina el margen predeterminado */
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(../CSS/img/Fondo/fondo2.webp);
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-position: center center; /* Centra la imagen */
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-position: fixed;
     color: #fff;
+    overflow: hidden;
 }
+
 
 
 /* Estilo del contenedor */
@@ -141,4 +145,11 @@ button {
 button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+#assigned_to {
+    display: block; 
+    margin: 10px auto; 
+    width: 80%; 
+    text-align: center; 
 }

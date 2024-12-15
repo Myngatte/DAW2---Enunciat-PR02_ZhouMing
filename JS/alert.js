@@ -47,3 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// Cambiar entre reserva y asignar
+document.getElementById('accion').addEventListener('change', function() {
+    var accion = this.value;
+    document.getElementById('campo-nombre').style.display = (accion === 'asignar') ? 'block' : 'none';
+    document.getElementById('campo-reserva').style.display = (accion === 'reservar') ? 'block' : 'none';
+});

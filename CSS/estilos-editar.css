@@ -1,0 +1,172 @@
+/* Configuración global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../CSS/img/Fondo/fondo2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* Fondo fijo */
+    color: #00ff99;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Encabezados principales */
+h1, h2 {
+    font-size: 1.8rem;
+    color: #00ff99;
+    text-shadow: 0 0 15px #ff00e6, 0 0 25px #00ff99;
+    animation: glow 1.5s infinite alternate;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+/* Efecto de brillo animado */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff00e6, 0 0 20px #00ff99;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff00e6, 0 0 30px #00ff99;
+    }
+}
+
+/* Formularios */
+form {
+    background-color: #1a0936;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px #00ff99, 0 0 50px #ff00e6;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+}
+
+/* Etiquetas */
+label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99;
+}
+
+/* Campos de texto y select */
+input[type="text"], input[type="number"], select {
+    background-color: #0f0528;
+    border: 2px solid #00ff99;
+    border-radius: 5px;
+    color: #00ff99;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    outline: none;
+    box-shadow: inset 0 0 10px #00ff99;
+    transition: all 0.3s ease;
+}
+
+/* Efectos de hover y foco */
+input:focus, select:focus {
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #00ff99;
+}
+
+/* Botones principales */
+button {
+    background-color: #00ff99;
+    color: #1a0936;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff99, 0 0 20px #ff00e6;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    align-self: center;
+}
+
+/* Hover en botones */
+button:hover {
+    background-color: #1a0936;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    box-shadow: 0 0 30px #00ff99, inset 0 0 10px #ff00e6;
+}
+
+/* Botones secundarios */
+button.secondary {
+    background-color: transparent;
+    color: #ff00e6;
+    border: 2px solid #ff00e6;
+    box-shadow: 0 0 15px #ff00e6;
+}
+
+button.secondary:hover {
+    background-color: #ff00e6;
+    color: #1a0936;
+    box-shadow: 0 0 30px #ff00e6, inset 0 0 10px #00ff99;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #1a0936;
+    box-shadow: 0 0 15px #00ff99, 0 0 30px #ff00e6;
+}
+
+table th, table td {
+    border: 1px solid #00ff99;
+    padding: 10px;
+    color: #00ff99;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    text-shadow: 0 0 10px #00ff99;
+}
+
+table th {
+    background-color: #0f0528;
+}
+
+table tr:hover {
+    background-color: #0f0528;
+    color: #ff00e6;
+}
+
+/* Mensajes de error */
+span.error {
+    color: #ff0040;
+    text-shadow: 0 0 10px #ff0040, 0 0 20px #ff7700;
+    font-size: 0.8rem;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Personalización adicional */
+a {
+    color: #00ff99;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a:hover {
+    text-shadow: 0 0 10px #ff00e6, 0 0 20px #00ff99;
+}

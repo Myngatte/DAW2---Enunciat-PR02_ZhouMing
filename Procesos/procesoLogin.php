@@ -23,7 +23,6 @@ try {
 
     // Verificar si se encontró el usuario
     if ($row) {
-        // Comparar la contraseña ingresada con el hash almacenado
         if ($pwd !== $row["user_pwd"]) {
             header("Location: ../index.php?error=datosMal");
             exit();
@@ -34,8 +33,12 @@ try {
             // Almacenar el ID del admin en la sesión
             $_SESSION["adminID"] = $row["id_user"];
             header("Location: ../Paginas/Admin/administracion.php?login=success");
-        } elseif ($row["rol_user"] == 2) {
+        } elseif ($row["rol_user"] == 5) {
             // Almacenar el ID del camarero en la sesión
+            $_SESSION["camareroID"] = $row["id_user"];
+            header("Location: ../Paginas/Camarero/salas.php?login=success");
+        }elseif ($row["rol_user"] == 2) {
+            // Almacenar el ID como camarero si es gerente
             $_SESSION["camareroID"] = $row["id_user"];
             header("Location: ../Paginas/Camarero/salas.php?login=success");
         } else {

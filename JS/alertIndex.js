@@ -16,3 +16,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+// Función para mostrar u ocultar las salas por tipo de sala
+function toggleSalas(tipoSala) {
+    // Buscar todos los contenedores de salas
+    const salasContainers = document.querySelectorAll('.salas-container');
+    
+    salasContainers.forEach(container => {
+        if (container.id === tipoSala) {
+            // Si el contenedor es el que corresponde al tipo de sala seleccionado, lo mostramos
+            container.style.display = container.style.display === "none" || container.style.display === "" ? "block" : "none";
+        } else {
+            // Si no es el contenedor seleccionado, lo ocultamos
+            container.style.display = "none";
+        }
+    });
+}

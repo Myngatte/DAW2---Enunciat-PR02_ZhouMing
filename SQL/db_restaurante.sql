@@ -21,18 +21,19 @@ CREATE TABLE tipo_salas(
 CREATE TABLE tbl_salas(
     id_salas INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name_sala VARCHAR(15) NOT NULL,
-    tipo_sala INT NOT NULL
+    tipo_sala INT NOT NULL,
+    foto_sala VARCHAR(255) NULL
 );
 CREATE TABLE tbl_mesas(
     id_mesa INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     n_asientos INT NOT NULL,
-    id_sala INT NOT NULL
+    id_sala INT NULL
 );
 CREATE TABLE ocupacion(
     id_ocupacion INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fecha_C DATETIME NOT NULL,
     fecha_F DATETIME NULL,
-    assigned_by INT NOT NULL,
+    assigned_by INT NULL,
     assigned_to VARCHAR(30) NOT NULL,
     es_reserva BOOLEAN NOT NULL DEFAULT FALSE,
     id_mesa INT NOT NULL
@@ -54,6 +55,9 @@ ALTER TABLE
 INSERT INTO roles (nombre_rol)
 VALUES 
 ('Administrador'),
+('Gerente'),
+('Conserje'),
+('Cocinero'),
 ('Camarero');
 
 -- Inserciones en la tabla tbl_user

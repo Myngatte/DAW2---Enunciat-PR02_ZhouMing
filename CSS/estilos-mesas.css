@@ -8,6 +8,7 @@
 /* Fondo de la página */
 body {
     background-image: url(../CSS/img/Fondo/fondo2.webp);
+    background-position: fixed;
     color: #fff; /* Texto blanco */
     font-family: 'Courier New', Courier, monospace; /* Fuente tipo retro */
     line-height: 1.6;
@@ -130,4 +131,85 @@ button:active {
 h1, h2, h3, p {
     font-weight: bold;
     text-shadow: 0 0 10px #ff007f, 0 0 20px #39ff14;
+}
+
+/* Centrar la imagen en su contenedor */
+.foto-sala {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Definir el tamaño de la imagen */
+#foto_sala {
+    width: 400px;
+    height: 400px;
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+}
+
+/* Estilo para el formulario de subir foto */
+.formulario-subir-imagen {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con algo de transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Maximo tamaño */
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Estilo para el título del formulario */
+.titulo-formulario {
+    color: #39ff14; /* Color neón verde */
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+
+/* Estilo para la etiqueta del input */
+.label-imagen {
+    color: #ff007f; /* Color rosa neón */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Estilo para el input de tipo file */
+.input-imagen {
+    background-color: #1c1c1c;
+    border: 2px solid #ff007f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-imagen:hover {
+    border-color: #39ff14;
+    background-color: #333;
+    box-shadow: 0 0 10px #39ff14;
+}
+
+/* Estilo para el botón de subir la foto */
+.btn-subir-imagen {
+    background-color: #ff007f; /* Rosa neón */
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid #ff007f;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-subir-imagen:hover {
+    background-color: #39ff14; /* Verde neón */
+    color: #1c1c1c;
+    box-shadow: 0 0 15px #39ff14, 0 0 25px #39ff14;
 }
