@@ -159,7 +159,7 @@
                     echo "</div>";
 
                     // Botón enviar
-                    echo "<button type='submit' class='btn-asignar'>Enviar</button>";
+                    echo "<button type='submit' class='btn btn-success' id='btn-asignar'>Enviar</button>";
                     echo "</form>";
                 }
             }
