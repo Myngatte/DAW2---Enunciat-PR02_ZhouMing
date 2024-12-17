@@ -153,3 +153,10 @@ button:hover {
     width: 80%; 
     text-align: center; 
 }
+
+#assigned_to2 {
+    display: block; 
+    margin: 10px auto; 
+    width: 80%; 
+    text-align: center; 
+}

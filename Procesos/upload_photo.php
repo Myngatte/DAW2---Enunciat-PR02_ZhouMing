@@ -32,8 +32,8 @@ if (isset($_FILES['sala_image']) && $_FILES['sala_image']['error'] === UPLOAD_ER
             exit();
         }
 
-        // Validar el tamaño del archivo (por ejemplo, máximo 5MB)
-        $max_size = 5 * 1024 * 1024; // 5MB
+        // Validar el tamaño del archivo (5MB recomendado)
+        $max_size = 5 * 1024 * 1024;
         if ($file_size > $max_size) {
             echo "Error: El archivo es demasiado grande. El tamaño máximo permitido es 5MB.";
             exit();
